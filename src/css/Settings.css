@@ -1,15 +1,23 @@
 .settings {
   margin-bottom: 20px;
-  text-align: right;
+  text-align: left;
 }
 
 .hire-date-input {
   font-size: 14px;
+  color: #666;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .hire-date-input input {
-  margin-left: 8px;
   padding: 4px 8px;
   border: 1px solid #ddd;
   border-radius: 4px;
+}
+
+.years-of-service {
+  color: #666;
+  margin-left: 16px;
 } 

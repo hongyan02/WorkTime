@@ -4,27 +4,38 @@
 
 .calendar {
   width: 100%;
-  border-radius: 8px;
-  background: white;
+  max-width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .calendar-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  justify-content: center;
+  margin: 15px auto;
+  gap: 10px;
 }
 
 .calendar-header button {
-  border: none;
   background: none;
+  border: none;
+  padding: 5px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
 }
 
 .month-title {
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 600;
+  text-align: center;
+  min-width: 90px;
+  color: #333;
 }
 
 .weekdays {
@@ -48,14 +59,16 @@
 }
 
 .calendar-day {
+  position: relative;
   aspect-ratio: 1;
-  padding: 5px;
-  cursor: pointer;
-  border: none;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  padding: 4px;
+  font-size: 14px;
+  min-height: 38px;
+  background: white;
 }
 
 .day-content {
@@ -63,10 +76,12 @@
   flex-direction: column;
   align-items: center;
   gap: 4px;
+  height: 35px;
 }
 
 .day-number {
   font-size: 14px;
+  height: 18px;
 }
 
 .day-hours {
@@ -75,6 +90,7 @@
   background-color: #fff5e6;
   padding: 2px 6px;
   border-radius: 10px;
+  height: 17px;
 }
 
 .calendar-day:hover {
@@ -91,4 +107,80 @@
 
 .empty {
   background: transparent;
+}
+
+.calendar-body {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+
+.overtime-hours {
+  font-size: 12px;
+  color: #666;
+  margin-top: 2px;
+}
+
+/* 月份选择器容器 */
+.month-selector {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;  /* 改为两端对齐 */
+  width: 120px;  /* 固定宽度 */
+  margin: 15px auto;  /* 使用 auto 边距水平居中 */
+}
+
+/* 月份文本 */
+.current-month {
+  font-size: 14px;
+  text-align: center;
+  flex: 1;  /* 占据中间空间 */
+}
+
+/* 箭头按钮 */
+.prev-month,
+.next-month {
+  background: none;
+  border: none;
+  padding: 0 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* 移动端适配 */
+@media screen and (max-width: 667px) {
+  .calendar-day {
+    font-size: 12px;
+    padding: 1px;
+  }
+  
+  .overtime-hours {
+    font-size: 10px;
+  }
+  
+  .calendar {
+    padding: 5px;
+  }
+  
+  .calendar-body {
+    gap: 1px;
+  }
+  
+  .month-selector {
+    width: 100px;  /* 移动端稍微窄一点 */
+  }
+  
+  .calendar-header {
+    gap: 8px;
+  }
+  
+  .month-title {
+    font-size: 15px;
+    min-width: 80px;
+  }
+  
+  button {
+    width: 20px;
+    height: 20px;
+  }
 }
