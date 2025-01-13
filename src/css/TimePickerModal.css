@@ -1,0 +1,106 @@
+.time-picker-modal {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  position: relative;
+  background: white;
+  padding: 20px;
+  border-radius: 12px 12px 0 0;
+}
+
+.time-picker-header {
+  margin-bottom: 20px;
+}
+
+.time-picker-select {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #fff5e6;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+.time-picker-select span {
+  font-size: 16px;
+}
+
+.time-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.time-section {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 20px;
+}
+
+.time-section:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.time-options {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+.time-option {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f5;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.time-option.selected {
+  background-color: #fff5e6;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.modal-actions button {
+  padding: 8px 24px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.confirm-btn {
+  background-color: #007aff;
+  color: white;
+}
+
+.cancel-btn {
+  background-color: #f5f5f5;
+  color: #333;
+} 

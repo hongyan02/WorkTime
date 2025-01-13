@@ -1,0 +1,93 @@
+.time-picker-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: none;
+}
+
+.time-picker-overlay.visible {
+  display: flex;
+  align-items: flex-end;
+}
+
+.time-picker-modal {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 12px 12px 0 0;
+  transform: translateY(100%);
+  transition: transform 0.3s ease-out;
+}
+
+.time-picker-overlay.visible .time-picker-modal {
+  transform: translateY(0);
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.time-picker-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.time-picker-header button {
+  border: none;
+  background: none;
+  color: #007AFF;
+  font-size: 16px;
+  padding: 0;
+}
+
+.time-picker-header span {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.time-picker-content {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  gap: 20px;
+}
+
+.time-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.time-column select {
+  width: 100px;
+  height: 40px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 16px;
+  background-color: #f8f8f8;
+}
+
+.time-label {
+  font-size: 14px;
+  color: #666;
+}
+
+/* 移动端适配 */
+@media screen and (max-width: 768px) {
+  .time-column select {
+    width: 80px;
+  }
+} 

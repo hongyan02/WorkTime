@@ -1,0 +1,153 @@
+/* src/App.css */
+.App {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.summary {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.summary-item {
+  background-color: #ffeb3b;
+  padding: 20px 40px;
+  border-radius: 16px;
+  text-align: center;
+  min-width: 200px;
+}
+
+.summary-item .label {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.summary-item .value {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.calendar {
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+}
+
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  margin-bottom: 10px;
+  color: #666;
+}
+
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+.day {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-size: 16px;
+}
+
+.day.empty {
+  background: none;
+}
+
+.hours {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffeb3b;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.highlight {
+  background-color: #fff9c4;
+  border-radius: 8px;
+}
+
+/* 添加移动端适配 */
+@media screen and (max-width: 768px) {
+  .App {
+    padding: 16px;
+  }
+
+  .summary {
+    flex-direction: row;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .summary-item {
+    padding: 12px;
+    min-width: 140px;
+  }
+
+  .summary-item .label {
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+
+  .summary-item .value {
+    font-size: 20px;
+  }
+
+  .weekdays {
+    font-size: 14px;
+  }
+
+  .days {
+    gap: 4px;
+  }
+
+  .day {
+    font-size: 14px;
+  }
+
+  .hours {
+    font-size: 10px;
+    padding: 1px 6px;
+    bottom: 2px;
+  }
+}
+
+/* 更小屏幕的适配 */
+@media screen and (max-width: 375px) {
+  .App {
+    padding: 12px;
+  }
+
+  .summary-item {
+    padding: 10px;
+    min-width: 120px;
+  }
+
+  .summary-item .value {
+    font-size: 18px;
+  }
+
+  .weekdays {
+    font-size: 12px;
+  }
+
+  .day {
+    font-size: 12px;
+  }
+
+  .hours {
+    padding: 1px 4px;
+  }
+}
